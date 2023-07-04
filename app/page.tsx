@@ -1,4 +1,5 @@
 import { DateDisplay } from "./components/Date/DateDisplay";
+import { InputTask } from "./components/Task/InputTask";
 import { TaskDetail } from "./components/Task/TaskDetail";
 import { Tab } from "./components/ToggleTab/Tab";
 
@@ -13,6 +14,7 @@ const Page = () => {
         date={"23 may 2023"}
         category={"Basic Task"}
       />
+      <InputTask />
     </>
   );
 };

@@ -1,10 +1,6 @@
-interface Props {
-  title: string;
-  date: string;
-  category: string;
-}
+import { TaskProps } from "@/app/Type/Todo";
 
-export const TaskDetail: React.FC<Props> = ({ title, date, category }) => {
+export const TaskDetail: React.FC<TaskProps> = ({ title, date, category }) => {
   return (
     <div className="bg-white py-8 px-16 rounded-md max-w-3xl mx-auto">
       <div className="flex items-center justify-between">
@@ -13,7 +9,7 @@ export const TaskDetail: React.FC<Props> = ({ title, date, category }) => {
           +
         </div>
       </div>
-      <div className="flex text-slate-400 gap-4">
+      <div className="flex text-slate-400">
         <h2>{date}</h2>
         <h2>{category}</h2>
       </div>

@@ -1,9 +1,6 @@
-interface Props {
-  title: string;
-  notification: number;
-}
+import { ToggleProps } from "@/app/Type/Todo";
 
-export const Tab: React.FC<Props> = ({ title, notification }) => {
+export const Tab: React.FC<ToggleProps> = ({ title, notification }) => {
   return (
     <div className="flex items-center gap-4">
       <h2>{title}</h2>

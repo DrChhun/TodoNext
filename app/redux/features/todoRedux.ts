@@ -10,7 +10,7 @@ interface CounterState {
 
 // Define the initial state using that type
 const initialState: CounterState = {
-  value: [],
+  value: ['fix bug on #56'],
 }
 
 export const counterSlice = createSlice({

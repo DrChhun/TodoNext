@@ -8,10 +8,18 @@ import { useSelector } from "react-redux";
 
 const Page = () => {
   const todo = useSelector((state: any) => state.todos.value);
+  const today = new Date();
+
   return (
     <div className="container">
       <div className="flex justify-between py-12">
-        <DateDisplay date="Sun, 2 Jul" />
+        <DateDisplay
+          date={today.toLocaleDateString("en-IN", {
+            day: "numeric",
+            month: "short",
+            year: "2-digit",
+          })}
+        />
         <InputTask />
       </div>
       <Tab className="py-8" title="ALL" notification={12} />
@@ -21,7 +29,13 @@ const Page = () => {
             <div key={index} className="py-4">
               <TaskDetail
                 title={x}
-                date={"23 may 2023"}
+                date={today.toLocaleDateString("en-IN", {
+                  day: "numeric",
+                  month: "short",
+                  year: "2-digit",
+                  hour: "numeric",
+                  hour12: true,
+                })}
                 category={"Basic Task"}
               />
             </div>

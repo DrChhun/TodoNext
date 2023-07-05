@@ -16,7 +16,7 @@ export const TaskDetail: React.FC<TaskProps> = ({
           +
         </div>
       </div>
-      <div className="flex text-slate-400">
+      <div className="flex text-slate-400 gap-8">
         <h2>{date}</h2>
         <h2>{category}</h2>
       </div>

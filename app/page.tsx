@@ -22,7 +22,11 @@ const Page = () => {
         />
         <InputTask />
       </div>
-      <Tab className="py-8" title="ALL" notification={12} />
+      <div className="flex gap-8">
+        <Tab className="py-8" title="All" notification={12} />
+        <Tab className="py-8" title="Completed" notification={2} />
+        <Tab className="py-8" title="Favorite" notification={9} />
+      </div>
       {todo.map((x: any, index: number) => (
         <>
           {x != "" && (

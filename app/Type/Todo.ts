@@ -10,5 +10,6 @@ export interface DateDisplayProps {
 
 export interface ToggleProps {
     title: string;
+    className: string;
     notification: number;
 }

@@ -2,6 +2,7 @@ export interface TaskProps {
     title: string;
     date: string;
     category: string;
+    className?:string;
 }
 
 export interface DateDisplayProps {

@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 
 const Page = () => {
   const todo = useSelector((state: any) => state.todos.value);
+  const favorite = useSelector((state: any) => state.todos.important);
+  const complete = useSelector((state: any) => state.todos.complete);
   const today = new Date();
 
   return (
@@ -23,9 +25,17 @@ const Page = () => {
         <InputTask />
       </div>
       <div className="flex gap-8">
-        <Tab className="py-8" title="All" notification={12} />
-        <Tab className="py-8" title="Completed" notification={2} />
-        <Tab className="py-8" title="Important" notification={9} />
+        <Tab className="py-8" title="All" notification={todo.length} />
+        <Tab
+          className="py-8"
+          title="Completed"
+          notification={complete.length}
+        />
+        <Tab
+          className="py-8"
+          title="Important"
+          notification={favorite.length}
+        />
       </div>
       {todo.map((x: any, index: number) => (
         <>

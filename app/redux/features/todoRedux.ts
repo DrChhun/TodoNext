@@ -6,13 +6,15 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 // Define a type for the slice state
 interface CounterState {
   value: Array<string>,
-  important: Array<string>
+  important: Array<string>,
+  complete: Array<string>
 }
 
 // Define the initial state using that type
 const initialState: CounterState = {
   value: ['fix bug on #56'],
-  important: []
+  important: [],
+  complete: []
 }
 
 export const counterSlice = createSlice({
@@ -25,6 +27,9 @@ export const counterSlice = createSlice({
     decrement: (state) => {
       state.value.push('not okay')
     },
+    addToComplete: (state, action: PayloadAction<string>) => {
+      state.complete.push(action.payload)
+    },
     addToFavorite: (state, action: PayloadAction<string>) => {
       state.important.push(action.payload)
     },
@@ -34,6 +39,6 @@ export const counterSlice = createSlice({
   },
 })
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, addToFavorite, addToComplete } = counterSlice.actions
 
 export default counterSlice.reducer

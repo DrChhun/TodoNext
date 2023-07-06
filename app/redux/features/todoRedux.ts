@@ -7,14 +7,14 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 interface CounterState {
   value: Array<string>,
   important: Array<string>,
-  complete: Array<string>
+  complete: Array<string>,
 }
 
 // Define the initial state using that type
 const initialState: CounterState = {
   value: ['fix bug on #56'],
   important: [],
-  complete: []
+  complete: [],
 }
 
 export const counterSlice = createSlice({

@@ -8,18 +8,20 @@ export const InputTask = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    dispath(incrementByAmount(handleInput));
+    {
+      handleInput != "" && dispath(incrementByAmount(handleInput));
+    }
   };
   return (
     <div className="space-x-8">
-      <form onSubmit={handleSubmit}>
+      <form className="space-x-8" onSubmit={handleSubmit}>
         <input
           onChange={(e) => setInput(e.target.value)}
-          className="px-4 py-2 outline-none border-b-2 border-blue-500"
+          className="px-2 md:px-4 py-2 outline-none border-b-2 border-blue-500"
           type="text"
           placeholder="to do something..."
         />
-        <button className="bg-blue-200 text-blue-500 px-4 py-2 rounded-md">
+        <button className="bg-blue-200 hover:bg-blue-300 font-semibold text-blue-500 px-4 py-2 rounded-md">
           Add Task
         </button>
       </form>
